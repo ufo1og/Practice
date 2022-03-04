@@ -27,4 +27,16 @@ public class ArrayManager {
         fillArray(maxValue, array);
         return array;
     }
+
+    public static void swapElements (int[] array, int firstIndex, int secondIndex) {
+        array[firstIndex] += array[secondIndex];
+        array[secondIndex] = array[firstIndex] - array[secondIndex];
+        array[firstIndex] = array[firstIndex] - array[secondIndex];
+    }
+
+    public static void swapElements (double[] array, int firstIndex, int secondIndex) {
+        array[firstIndex] += array[secondIndex];
+        array[secondIndex] = array[firstIndex] - array[secondIndex];
+        array[firstIndex] = array[firstIndex] - array[secondIndex];
+    }
 }
