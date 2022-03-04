@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class ArrayManager {
@@ -38,5 +39,18 @@ public class ArrayManager {
         array[firstIndex] += array[secondIndex];
         array[secondIndex] = array[firstIndex] - array[secondIndex];
         array[firstIndex] = array[firstIndex] - array[secondIndex];
+    }
+
+    public static void removeArrayElementsByValue (int[] array, int value) {
+        int shift = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == value) {
+                shift++;
+            } else {
+                array[i - shift] = array[i];
+            }
+        }
+        int[] resultArray = Arrays.copyOf(array, array.length - shift);
+        System.out.println(Arrays.toString(resultArray));
     }
 }
