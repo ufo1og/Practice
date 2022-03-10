@@ -30,15 +30,15 @@ public class ArrayManager {
     }
 
     public static void swapElements (int[] array, int firstIndex, int secondIndex) {
-        array[firstIndex] += array[secondIndex];
-        array[secondIndex] = array[firstIndex] - array[secondIndex];
-        array[firstIndex] = array[firstIndex] - array[secondIndex];
+        int temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
     }
 
     public static void swapElements (double[] array, int firstIndex, int secondIndex) {
-        array[firstIndex] += array[secondIndex];
-        array[secondIndex] = array[firstIndex] - array[secondIndex];
-        array[firstIndex] = array[firstIndex] - array[secondIndex];
+        double temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
     }
 
     public static void removeArrayElementsByValue (int[] array, int value) {
