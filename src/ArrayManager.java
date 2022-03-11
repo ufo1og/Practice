@@ -66,7 +66,6 @@ public class ArrayManager {
             while (a[i] < v) {
                 i++;
             }
-
             while (a[j] > v) {
                 j--;
             }
@@ -102,10 +101,25 @@ public class ArrayManager {
             if (i >= j) break;
             swapElements(a, i++, j--);
         }
-        //System.out.println(i + " " + j);
         if (i == j) quickSort(a, i + 1, r);
         else quickSort(a, i, r);
         quickSort(a, l, j);
     }
 
+    public static int binarySearch (int[] a, int key) {
+        int firstIndex = 0;
+        int lastIndex = a.length - 1;
+        int middleIndex;
+        while (firstIndex <= lastIndex) {
+            middleIndex = (firstIndex + lastIndex) >> 1;
+            if (a[middleIndex] == key) {
+                return middleIndex;
+            } else if (a[middleIndex] > key) {
+                lastIndex = middleIndex - 1;
+            } else if (a[middleIndex] < key) {
+                firstIndex = middleIndex + 1;
+            }
+        }
+        return -1;
+    }
 }
